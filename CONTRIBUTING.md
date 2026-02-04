@@ -1,72 +1,112 @@
-# Contributing to EngiCalc Pro
+﻿# Contributing to EngiCalc Pro
 
-First off, thank you for considering contributing to EngiCalc Pro! It's people like you that make this calculator even better for everyone.
+Thank you for considering contributing to EngiCalc Pro. This document provides guidelines for contributing to the project.
 
-## How Can I Contribute?
+## Code of Conduct
+
+This project adheres to a [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to Kanjanikumar52@gmail.com.
+
+## How to Contribute
 
 ### Reporting Bugs
 
-Before creating bug reports, please check existing issues as you might find out that you don't need to create one. When you are creating a bug report, please include as many details as possible:
+Before creating a bug report, please check existing issues. When creating a bug report, include:
 
-* **Use a clear and descriptive title**
-* **Describe the exact steps which reproduce the problem**
-* **Provide specific examples**
-* **Describe the behavior you observed and what you expected**
-* **Include screenshots if possible**
-* **Mention your browser and version**
+* Clear and descriptive title
+* Exact steps to reproduce the problem
+* Specific examples and expected vs. actual behavior
+* Screenshots if applicable
+* Browser and version information
 
-### Suggesting Enhancements
+Use the [Bug Report template](.github/ISSUE_TEMPLATE/bug_report.md) when creating an issue.
 
-Enhancement suggestions are tracked as GitHub issues. When creating an enhancement suggestion, please include:
+### Suggesting Features
 
-* **Use a clear and descriptive title**
-* **Provide a step-by-step description of the suggested enhancement**
-* **Provide specific examples to demonstrate the steps**
-* **Describe the current behavior and explain the behavior you expected**
-* **Explain why this enhancement would be useful**
+Feature suggestions are tracked as GitHub issues. When creating a feature request, include:
+
+* Clear and descriptive title
+* Step-by-step description of the suggested enhancement
+* Specific examples demonstrating the use case
+* Explanation of why this would be useful
+
+Use the [Feature Request template](.github/ISSUE_TEMPLATE/feature_request.md) when creating an issue.
 
 ### Pull Requests
 
-* Fill in the required template
-* Do not include issue numbers in the PR title
-* Follow the JavaScript style guide
-* Include thoughtfully-worded, well-structured commit messages
-* Document new code
-* End all files with a newline
+1. Fork the repository
+2. Create a new branch: `git checkout -b feature/your-feature-name`
+3. Make your changes
+4. Test in multiple browsers (Chrome, Firefox, Safari, Edge)
+5. Commit with clear messages: `git commit -m "Add feature: description"`
+6. Push to your fork: `git push origin feature/your-feature-name`
+7. Open a Pull Request using the [PR template](.github/PULL_REQUEST_TEMPLATE.md)
 
-## Development Setup
-
-1. Fork the repo
-2. Clone your fork
-3. Create a new branch: `git checkout -b my-feature-branch`
-4. Make your changes
-5. Test your changes in multiple browsers
-6. Commit your changes: `git commit -am 'Add new feature'`
-7. Push to the branch: `git push origin my-feature-branch`
-8. Submit a pull request
-
-## Style Guide
+## Development Guidelines
 
 ### JavaScript
-* Use meaningful variable names
+
+* Use meaningful variable and function names
 * Add comments for complex logic
-* Follow existing code patterns
-* Use ES6+ features when appropriate
+* Follow existing code patterns and structure
+* Use ES6+ features appropriately
+* Avoid introducing external dependencies
 
 ### CSS
+
 * Use class names that describe purpose, not appearance
 * Keep specificity low
 * Use CSS custom properties for repeated values
 * Maintain responsive design principles
+* Test in both light and dark modes
 
-### Commit Messages
-* Use present tense ("Add feature" not "Added feature")
-* Use imperative mood ("Move cursor to..." not "Moves cursor to...")
+### HTML
+
+* Use semantic HTML5 elements
+* Ensure accessibility (ARIA labels where appropriate)
+* Maintain clean structure and indentation
+
+## Testing
+
+Before submitting a PR, verify:
+
+* All calculator modes work correctly (Basic, Scientific, Engineering)
+* Unit conversions produce accurate results
+* Dark mode toggle functions properly
+* Calculation history saves and loads correctly
+* Keyboard shortcuts work as expected
+* UI is responsive on mobile, tablet, and desktop
+* No console errors in browser developer tools
+* Code works in Chrome, Firefox, Safari, and Edge
+
+## Commit Message Guidelines
+
+* Use present tense: "Add feature" not "Added feature"
+* Use imperative mood: "Fix bug" not "Fixes bug"
 * Limit first line to 72 characters
-* Reference issues and pull requests after the first line
+* Reference issues: "Fix #123: Description"
 
-## Code of Conduct
+## Project Structure
 
-This project and everyone participating in it is governed by respect and professionalism. Please be kind and courteous to others.
+```
+engicalc-pro/
+ index.html          # Main HTML structure
+ styles.css          # All styling
+ script.js           # All JavaScript logic
+ README.md           # Project documentation
+ CONTRIBUTING.md     # This file
+ CODE_OF_CONDUCT.md  # Community guidelines
+ SECURITY.md         # Security policy
+ LICENSE             # MIT License
+ .github/
+     ISSUE_TEMPLATE/ # Issue templates
+     PULL_REQUEST_TEMPLATE.md
+```
 
-Thank you for contributing! 🎉
+## Questions?
+
+If you have questions not covered here, feel free to:
+
+* Open a discussion on GitHub
+* Contact the maintainer at Kanjanikumar52@gmail.com
+
+Thank you for contributing!
