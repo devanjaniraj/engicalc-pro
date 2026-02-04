@@ -11,10 +11,15 @@ A fully-featured, modern web-based engineering calculator with a vibrant and int
 - **Basic Mode** - Standard arithmetic operations for everyday calculations
 - **Scientific Mode** - Advanced mathematical functions including:
   - Trigonometric functions (sin, cos, tan)
+  - Inverse trigonometric functions (sin⁻¹, cos⁻¹, tan⁻¹)
+  - Hyperbolic functions (sinh, cosh, tanh)
   - Logarithmic functions (log, ln)
   - Exponential functions (e^x, x^y)
-  - Square root, power, factorial
+  - Root functions (√, ∛)
+  - Power functions (x², x³)
+  - Factorial, absolute value, modulo
   - Mathematical constants (π, e)
+  - Random number generator
 - **Engineering Mode** - Professional tools including:
   - Unit conversions (8 categories)
   - Physical constants
@@ -61,7 +66,7 @@ Quick access to essential scientific constants:
 ### Installation
 1. Clone this repository:
 ```bash
-git clone https://github.com/yourusername/engicalc-pro.git
+git clone https://github.com/devanjaniraj/engicalc-pro.git
 ```
 
 2. Navigate to the project directory:
@@ -74,6 +79,20 @@ cd engicalc-pro
    - Right-click and select "Open with" your preferred browser
 
 That's it! No build process or dependencies required.
+
+### 🐳 Using Docker
+Run the calculator in a Docker container:
+
+```bash
+# Using Docker Compose (recommended)
+docker-compose up -d
+
+# Or using Docker directly
+docker build -t engicalc-pro .
+docker run -d -p 8080:80 engicalc-pro
+```
+
+Then open `http://localhost:8080` in your browser.
 
 ### Using a Local Server (Optional)
 If you prefer to run it on a local server:

@@ -147,10 +147,31 @@ class Calculator {
                 result = prev * current;
                 break;
             case 'divide':
-                result = current !== 0 ? prev / current : 'Error';
+                if (current === 0) {
+                    this.showError('Cannot divide by zero');
+                    this.currentValue = 'Error';
+                    this.operation = null;
+                    this.previousValue = '';
+                    this.shouldResetDisplay = true;
+                    this.updateDisplay();
+                    return;
+                }
+                result = prev / current;
                 break;
             case 'power':
                 result = Math.pow(prev, current);
+                break;
+            case 'modulo':
+                if (current === 0) {
+                    this.showError('Cannot modulo by zero');
+                    this.currentValue = 'Error';
+                    this.operation = null;
+                    this.previousValue = '';
+                    this.shouldResetDisplay = true;
+                    this.updateDisplay();
+                    return;
+                }
+                result = prev % current;
                 break;
             default:
                 return;
@@ -205,20 +226,47 @@ class Calculator {
                 result = this.angleMode === 'deg' ? 
                     Math.tan(current * Math.PI / 180) : Math.tan(current);
                 break;
+            case 'asin':
+                result = this.angleMode === 'deg' ? 
+                    Math.asin(current) * 180 / Math.PI : Math.asin(current);
+                break;
+            case 'acos':
+                result = this.angleMode === 'deg' ? 
+                    Math.acos(current) * 180 / Math.PI : Math.acos(current);
+                break;
+            case 'atan':
+                result = this.angleMode === 'deg' ? 
+                    Math.atan(current) * 180 / Math.PI : Math.atan(current);
+                break;
+            case 'sinh':
+                result = Math.sinh(current);
+                break;
+            case 'cosh':
+                result = Math.cosh(current);
+                break;
+            case 'tanh':
+                result = Math.tanh(current);
+                break;
             case 'log':
-                result = Math.log10(current);
+                result = current > 0 ? Math.log10(current) : 'Error';
                 break;
             case 'ln':
-                result = Math.log(current);
+                result = current > 0 ? Math.log(current) : 'Error';
                 break;
             case 'exp':
                 result = Math.exp(current);
                 break;
             case 'sqrt':
-                result = Math.sqrt(current);
+                result = current >= 0 ? Math.sqrt(current) : 'Error';
+                break;
+            case 'cbrt':
+                result = Math.cbrt(current);
                 break;
             case 'square':
                 result = current * current;
+                break;
+            case 'cube':
+                result = current * current * current;
                 break;
             case 'factorial':
                 result = this.factorial(Math.floor(current));
@@ -226,6 +274,19 @@ class Calculator {
             case 'reciprocal':
                 result = current !== 0 ? 1 / current : 'Error';
                 break;
+            case 'abs':
+                result = Math.abs(current);
+                break;
+            case 'rand':
+                this.currentValue = Math.random().toString();
+                this.updateDisplay();
+                return;
+            case 'modulo':
+                this.operation = 'modulo';
+                this.previousValue = this.currentValue;
+                this.shouldResetDisplay = true;
+                this.updateHistoryDisplay();
+                return;
             case 'pi':
                 this.currentValue = Math.PI.toString();
                 this.updateDisplay();
@@ -247,8 +308,13 @@ class Calculator {
         }
         
         if (result !== undefined) {
-            this.addToHistory(`${action}(${current})`, result);
-            this.currentValue = result.toString();
+            if (result === 'Error') {
+                this.currentValue = 'Error';
+                this.showError('Invalid operation');
+            } else {
+                this.addToHistory(`${action}(${current})`, result);
+                this.currentValue = result.toString();
+            }
             this.shouldResetDisplay = true;
             this.updateDisplay();
         }
@@ -373,7 +439,8 @@ class Calculator {
             subtract: '−',
             multiply: '×',
             divide: '÷',
-            power: '^'
+            power: '^',
+            modulo: 'mod'
         };
         return symbols[this.operation] || '';
     }
@@ -651,16 +718,35 @@ class Calculator {
         navigator.clipboard.writeText(textToCopy).then(() => {
             const copyBtn = document.getElementById('copyBtn');
             const originalContent = copyBtn.innerHTML;
-            copyBtn.innerHTML = '<span>✓</span>';
+            copyBtn.innerHTML = '<span aria-hidden="true">✓</span>';
             copyBtn.style.background = 'rgba(56, 239, 125, 0.3)';
+            copyBtn.setAttribute('aria-label', 'Copied!');
             
             setTimeout(() => {
                 copyBtn.innerHTML = originalContent;
                 copyBtn.style.background = '';
-            }, 1000);
+                copyBtn.setAttribute('aria-label', 'Copy result to clipboard');
+            }, 1500);
         }).catch(err => {
+            this.showError('Failed to copy to clipboard');
             console.error('Failed to copy:', err);
         });
+    }
+
+    showError(message) {
+        // Show error message temporarily
+        const historyDisplay = document.getElementById('historyDisplay');
+        const originalContent = historyDisplay.textContent;
+        historyDisplay.textContent = `⚠️ ${message}`;
+        historyDisplay.style.color = '#ff6b6b';
+        
+        setTimeout(() => {
+            historyDisplay.textContent = originalContent;
+            historyDisplay.style.color = '';
+            if (this.currentValue === 'Error') {
+                this.clear();
+            }
+        }, 2500);
     }
 
     loadPreferences() {
