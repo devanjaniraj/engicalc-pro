@@ -1,0 +1,9 @@
+services:
+  engicalc-pro:
+    build: .
+    ports:
+      - "8080:80"
+    container_name: engicalc-pro
+    restart: unless-stopped
+    environment:
+      - TZ=UTC
