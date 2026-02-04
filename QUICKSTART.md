@@ -4,6 +4,12 @@
 
 Your calculator has been **massively enhanced** with 10+ new features, 8 themes, 6 languages, and PWA support.
 
+## 🌐 Live Demo
+
+**Use it now:** [https://devanjaniraj.github.io/engicalc-pro/](https://devanjaniraj.github.io/engicalc-pro/)
+
+No installation needed - works instantly in your browser!
+
 ---
 
 ## ⚡ Getting Started in 30 Seconds

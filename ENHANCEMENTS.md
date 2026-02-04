@@ -2,6 +2,12 @@
 
 A modern, feature-rich web-based engineering calculator with comprehensive scientific functions, advanced features, and offline capability.
 
+## 🚀 Live Demo
+
+**Try it now:** [https://devanjaniraj.github.io/engicalc-pro/](https://devanjaniraj.github.io/engicalc-pro/)
+
+---
+
 ## ✨ New Features Added
 
 ### 1. **Advanced Calculator Modes**

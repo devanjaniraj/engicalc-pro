@@ -2,7 +2,7 @@
   "name": "EngiCalc Pro - Engineering Calculator",
   "short_name": "EngiCalc Pro",
   "description": "Advanced engineering calculator with scientific functions, unit conversions, and offline capability",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#667eea",

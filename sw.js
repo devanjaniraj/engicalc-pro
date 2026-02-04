@@ -5,16 +5,17 @@
 
 const CACHE_NAME = 'engicalc-pro-v1';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/script.js',
-    '/styles.css',
-    '/manifest.json',
-    '/modules/statistics.js',
-    '/modules/matrix.js',
-    '/modules/equation-solver.js',
-    '/modules/periodic-table.js',
-    '/modules/utilities.js'
+    './',
+    './index.html',
+    './script.js',
+    './styles.css',
+    './manifest.json',
+    './modules/statistics.js',
+    './modules/matrix.js',
+    './modules/equation-solver.js',
+    './modules/periodic-table.js',
+    './modules/utilities.js',
+    './modules/i18n.js'
 ];
 
 self.addEventListener('install', event => {
