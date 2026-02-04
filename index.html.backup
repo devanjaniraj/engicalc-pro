@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern engineering calculator with scientific functions, unit conversions, and dark mode. Perfect for students and professionals.">
+    <meta name="keywords" content="calculator, engineering calculator, scientific calculator, unit converter, math, physics">
+    <meta name="author" content="EngiCalc Pro">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/devanjaniraj/engicalc-pro">
+    <meta property="og:title" content="EngiCalc Pro - Modern Engineering Calculator">
+    <meta property="og:description" content="Fully-featured engineering calculator with dark mode, unit conversions, and scientific functions">
+    <meta property="og:image" content="https://raw.githubusercontent.com/devanjaniraj/engicalc-pro/main/preview.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://github.com/devanjaniraj/engicalc-pro">
+    <meta property="twitter:title" content="EngiCalc Pro - Modern Engineering Calculator">
+    <meta property="twitter:description" content="Fully-featured engineering calculator with dark mode, unit conversions, and scientific functions">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/devanjaniraj/engicalc-pro/main/preview.png">
+    
+    <title>EngiCalc Pro - Engineering Calculator</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧮</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calculator">
+            <div class="header">
+            <div class="header-top">
+                <h1>Engineering Calculator</h1>
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode" aria-label="Toggle between light and dark theme">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
+                </button>
+            </div>
+            <div class="mode-toggle">
+                <button id="basicMode" class="mode-btn active">Basic</button>
+                <button id="scientificMode" class="mode-btn">Scientific</button>
+                <button id="engineeringMode" class="mode-btn">Engineering</button>
+            </div>
+        </div>
+            
+            <div class="display-container">
+            <div class="display-controls">
+                <div class="angle-toggle" id="angleToggle" title="Toggle Angle Mode" role="button" tabindex="0" aria-label="Toggle between degrees and radians">
+                    <span class="angle-mode" id="angleMode" aria-live="polite">DEG</span>
+                </div>
+                <button class="copy-btn" id="copyBtn" title="Copy Result" aria-label="Copy result to clipboard">
+                    <span aria-hidden="true">📋</span>
+                </button>
+            </div>
+            <div class="history-display" id="historyDisplay" aria-label="Calculation expression" aria-live="polite"></div>
+            <div class="main-display" id="mainDisplay" role="status" aria-label="Calculation result" aria-live="assertive">0</div>
+        </div>
+
+            <div class="memory-bar" id="memoryBar">
+                <span id="memoryIndicator"></span>
+            </div>
+
+            <div class="calculator-body">
+                <!-- Basic Calculator Section -->
+                <div class="button-grid basic-grid" id="basicGrid">
+                    <button class="btn func-btn" data-action="clear">C</button>
+                    <button class="btn func-btn" data-action="backspace">⌫</button>
+                    <button class="btn func-btn" data-action="percent">%</button>
+                    <button class="btn operator-btn" data-action="divide">÷</button>
+                    
+                    <button class="btn num-btn" data-value="7">7</button>
+                    <button class="btn num-btn" data-value="8">8</button>
+                    <button class="btn num-btn" data-value="9">9</button>
+                    <button class="btn operator-btn" data-action="multiply">×</button>
+                    
+                    <button class="btn num-btn" data-value="4">4</button>
+                    <button class="btn num-btn" data-value="5">5</button>
+                    <button class="btn num-btn" data-value="6">6</button>
+                    <button class="btn operator-btn" data-action="subtract">−</button>
+                    
+                    <button class="btn num-btn" data-value="1">1</button>
+                    <button class="btn num-btn" data-value="2">2</button>
+                    <button class="btn num-btn" data-value="3">3</button>
+                    <button class="btn operator-btn" data-action="add">+</button>
+                    
+                    <button class="btn num-btn" data-value="0">0</button>
+                    <button class="btn num-btn" data-value=".">.</button>
+                    <button class="btn func-btn" data-action="negate">±</button>
+                    <button class="btn equals-btn" data-action="equals">=</button>
+                </div>
+
+                <!-- Scientific Calculator Section -->
+                <div class="button-grid scientific-grid hidden" id="scientificGrid">
+                    <button class="btn func-btn" data-action="clear">C</button>
+                    <button class="btn func-btn" data-action="backspace">⌫</button>
+                    <button class="btn sci-btn" data-action="square">x²</button>
+                    <button class="btn sci-btn" data-action="cube">x³</button>
+                    <button class="btn sci-btn" data-action="sqrt">√</button>
+                    <button class="btn operator-btn" data-action="divide">÷</button>
+                    
+                    <button class="btn sci-btn" data-action="sin">sin</button>
+                    <button class="btn sci-btn" data-action="cos">cos</button>
+                    <button class="btn sci-btn" data-action="tan">tan</button>
+                    <button class="btn sci-btn" data-action="asin">sin⁻¹</button>
+                    <button class="btn sci-btn" data-action="acos">cos⁻¹</button>
+                    <button class="btn operator-btn" data-action="multiply">×</button>
+                    
+                    <button class="btn sci-btn" data-action="atan">tan⁻¹</button>
+                    <button class="btn sci-btn" data-action="sinh">sinh</button>
+                    <button class="btn sci-btn" data-action="cosh">cosh</button>
+                    <button class="btn sci-btn" data-action="tanh">tanh</button>
+                    <button class="btn sci-btn" data-action="power">x^y</button>
+                    <button class="btn operator-btn" data-action="subtract">−</button>
+                    
+                    <button class="btn sci-btn" data-action="log">log</button>
+                    <button class="btn sci-btn" data-action="ln">ln</button>
+                    <button class="btn sci-btn" data-action="exp">e^x</button>
+                    <button class="btn sci-btn" data-action="cbrt">∛x</button>
+                    <button class="btn sci-btn" data-action="modulo">mod</button>
+                    <button class="btn operator-btn" data-action="add">+</button>
+                    
+                    <button class="btn num-btn" data-value="7">7</button>
+                    <button class="btn num-btn" data-value="8">8</button>
+                    <button class="btn num-btn" data-value="9">9</button>
+                    <button class="btn sci-btn" data-action="factorial">n!</button>
+                    <button class="btn sci-btn" data-action="pi">π</button>
+                    <button class="btn sci-btn" data-action="euler">e</button>
+                    
+                    <button class="btn num-btn" data-value="4">4</button>
+                    <button class="btn num-btn" data-value="5">5</button>
+                    <button class="btn num-btn" data-value="6">6</button>
+                    <button class="btn sci-btn" data-action="reciprocal">1/x</button>
+                    <button class="btn sci-btn" data-action="abs">|x|</button>
+                    <button class="btn func-btn" data-action="negate">±</button>
+                    
+                    <button class="btn num-btn" data-value="1">1</button>
+                    <button class="btn num-btn" data-value="2">2</button>
+                    <button class="btn num-btn" data-value="3">3</button>
+                    <button class="btn sci-btn" data-action="openParen">(</button>
+                    <button class="btn sci-btn" data-action="closeParen">)</button>
+                    <button class="btn num-btn" data-value=".">.</button>
+                    
+                    <button class="btn num-btn span-2" data-value="0">0</button>
+                    <button class="btn sci-btn" data-action="percent">%</button>
+                    <button class="btn sci-btn" data-action="rand">rand</button>
+                    <button class="btn equals-btn span-2" data-action="equals">=</button>
+                </div>
+
+                <!-- Engineering Calculator Section -->
+                <div class="engineering-panel hidden" id="engineeringPanel">
+                    <div class="conversion-section">
+                        <h3>Unit Conversions</h3>
+                        <div class="conversion-grid">
+                            <select id="unitCategory" class="unit-select">
+                                <option value="length">Length</option>
+                                <option value="mass">Mass</option>
+                                <option value="temperature">Temperature</option>
+                                <option value="area">Area</option>
+                                <option value="volume">Volume</option>
+                                <option value="speed">Speed</option>
+                                <option value="pressure">Pressure</option>
+                                <option value="energy">Energy</option>
+                            </select>
+                            
+                            <div class="conversion-inputs">
+                                <div class="input-group">
+                                    <input type="number" id="fromValue" placeholder="From">
+                                    <select id="fromUnit" class="unit-select"></select>
+                                </div>
+                                <span class="arrow">→</span>
+                                <div class="input-group">
+                                    <input type="number" id="toValue" placeholder="To" readonly>
+                                    <select id="toUnit" class="unit-select"></select>
+                                </div>
+                            </div>
+                            <button class="btn func-btn" id="convertBtn">Convert</button>
+                        </div>
+                    </div>
+
+                    <div class="constants-section">
+                        <h3>Physical Constants</h3>
+                        <div class="constants-grid">
+                            <button class="btn const-btn" data-constant="c">Speed of Light (c)</button>
+                            <button class="btn const-btn" data-constant="g">Gravity (g)</button>
+                            <button class="btn const-btn" data-constant="planck">Planck's (h)</button>
+                            <button class="btn const-btn" data-constant="avogadro">Avogadro (Nₐ)</button>
+                            <button class="btn const-btn" data-constant="boltzmann">Boltzmann (k)</button>
+                            <button class="btn const-btn" data-constant="gas">Gas Constant (R)</button>
+                        </div>
+                    </div>
+
+                    <div class="memory-section">
+                        <h3>Memory Functions</h3>
+                        <div class="memory-grid">
+                            <button class="btn mem-btn" data-action="mc">MC</button>
+                            <button class="btn mem-btn" data-action="mr">MR</button>
+                            <button class="btn mem-btn" data-action="mplus">M+</button>
+                            <button class="btn mem-btn" data-action="mminus">M−</button>
+                            <button class="btn mem-btn" data-action="ms">MS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="history-panel hidden" id="historyPanel">
+                <div class="history-header">
+                    <h3>History</h3>
+                    <button class="btn func-btn" id="clearHistory">Clear</button>
+                </div>
+                <div class="history-list" id="historyList"></div>
+            </div>
+
+            <button class="history-toggle" id="historyToggle">
+                <span>📜</span> History
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,313 @@
+/* Additional Themes for EngiCalc Pro */
+
+/* CSS Custom Properties for Theme System */
+:root {
+    --theme-bg: #ffffff;
+    --theme-text: #000000;
+    --theme-primary: #667eea;
+    --theme-secondary: #764ba2;
+    --theme-accent: #ff6b6b;
+}
+
+/* Ocean Theme */
+.theme-ocean {
+    --theme-bg: #0a3d62;
+    --theme-text: #ffffff;
+    --theme-primary: #00d2fc;
+    --theme-secondary: #3fa7d6;
+    --theme-accent: #00d2fc;
+}
+
+body.theme-ocean {
+    background: linear-gradient(135deg, #0a3d62 0%, #1e5a8e 50%, #0a3d62 100%);
+}
+
+body.theme-ocean .calculator {
+    background: rgba(15, 60, 90, 0.95);
+    color: white;
+}
+
+body.theme-ocean .num-btn {
+    background: linear-gradient(135deg, #1a6d8f 0%, #0d4a63 100%);
+    color: #fff;
+}
+
+body.theme-ocean .num-btn:hover {
+    background: linear-gradient(135deg, #2a7d9f 0%, #1d5a73 100%);
+}
+
+body.theme-ocean .operator-btn {
+    background: linear-gradient(135deg, #00d2fc 0%, #00a8cc 100%);
+    color: #fff;
+}
+
+body.theme-ocean .display-container {
+    background: linear-gradient(135deg, #051d2b 0%, #0a3d62 100%);
+    border: 2px solid #00d2fc;
+}
+
+/* Forest Theme */
+.theme-forest {
+    --theme-bg: #1b3d2f;
+    --theme-text: #ffffff;
+    --theme-primary: #2ecc71;
+    --theme-secondary: #27ae60;
+    --theme-accent: #2ecc71;
+}
+
+body.theme-forest {
+    background: linear-gradient(135deg, #1b3d2f 0%, #2d5a3d 50%, #1b3d2f 100%);
+}
+
+body.theme-forest .calculator {
+    background: rgba(25, 50, 40, 0.95);
+    color: white;
+}
+
+body.theme-forest .num-btn {
+    background: linear-gradient(135deg, #2d5a3d 0%, #1b3d2f 100%);
+    color: #fff;
+}
+
+body.theme-forest .operator-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: #fff;
+}
+
+body.theme-forest .display-container {
+    background: linear-gradient(135deg, #0f2418 0%, #1b3d2f 100%);
+    border: 2px solid #2ecc71;
+}
+
+body.theme-forest .header h1 {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Sunset Theme */
+.theme-sunset {
+    --theme-bg: #2c1810;
+    --theme-text: #ffffff;
+    --theme-primary: #ff6b6b;
+    --theme-secondary: #ff9999;
+    --theme-accent: #ffa500;
+}
+
+body.theme-sunset {
+    background: linear-gradient(135deg, #2c1810 0%, #4a2520 50%, #3d2817 100%);
+}
+
+body.theme-sunset .calculator {
+    background: rgba(40, 20, 10, 0.95);
+    color: white;
+}
+
+body.theme-sunset .num-btn {
+    background: linear-gradient(135deg, #4a2520 0%, #2c1810 100%);
+    color: #fff;
+}
+
+body.theme-sunset .operator-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+    color: #fff;
+}
+
+body.theme-sunset .display-container {
+    background: linear-gradient(135deg, #1a0f08 0%, #2c1810 100%);
+    border: 2px solid #ff6b6b;
+}
+
+body.theme-sunset .header h1 {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff9999 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Cyberpunk Theme */
+.theme-cyberpunk {
+    --theme-bg: #0f0f23;
+    --theme-text: #00ff00;
+    --theme-primary: #ff006e;
+    --theme-secondary: #8338ec;
+    --theme-accent: #00ff00;
+}
+
+body.theme-cyberpunk {
+    background: linear-gradient(135deg, #0f0f23 0%, #1f1f3d 50%, #0f0f23 100%);
+}
+
+body.theme-cyberpunk .calculator {
+    background: rgba(15, 15, 35, 0.95);
+    color: #00ff00;
+    border: 2px solid #ff006e;
+}
+
+body.theme-cyberpunk .num-btn {
+    background: linear-gradient(135deg, #1f1f3d 0%, #0f0f23 100%);
+    color: #00ff00;
+    border: 1px solid #00ff00;
+}
+
+body.theme-cyberpunk .num-btn:hover {
+    background: linear-gradient(135deg, #2f2f4d 0%, #1f1f3d 100%);
+    text-shadow: 0 0 10px #00ff00;
+}
+
+body.theme-cyberpunk .operator-btn {
+    background: linear-gradient(135deg, #ff006e 0%, #8338ec 100%);
+    color: #00ff00;
+    text-shadow: 0 0 10px #ff006e;
+}
+
+body.theme-cyberpunk .display-container {
+    background: linear-gradient(135deg, #0a0a15 0%, #151530 100%);
+    border: 2px solid #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+
+body.theme-cyberpunk .header h1 {
+    background: linear-gradient(135deg, #ff006e 0%, #00ff00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(255, 0, 110, 0.5);
+}
+
+body.theme-cyberpunk .main-display {
+    text-shadow: 0 0 10px #00ff00;
+}
+
+/* Nord Theme */
+.theme-nord {
+    --theme-bg: #2e3440;
+    --theme-text: #eceff4;
+    --theme-primary: #88c0d0;
+    --theme-secondary: #81a1c1;
+    --theme-accent: #bf616a;
+}
+
+body.theme-nord {
+    background: linear-gradient(135deg, #2e3440 0%, #3b4252 50%, #2e3440 100%);
+}
+
+body.theme-nord .calculator {
+    background: rgba(46, 52, 64, 0.95);
+    color: #eceff4;
+}
+
+body.theme-nord .num-btn {
+    background: linear-gradient(135deg, #3b4252 0%, #2e3440 100%);
+    color: #eceff4;
+}
+
+body.theme-nord .num-btn:hover {
+    background: linear-gradient(135deg, #4c566a 0%, #3b4252 100%);
+}
+
+body.theme-nord .operator-btn {
+    background: linear-gradient(135deg, #88c0d0 0%, #81a1c1 100%);
+    color: #2e3440;
+}
+
+body.theme-nord .display-container {
+    background: linear-gradient(135deg, #1a1f28 0%, #2e3440 100%);
+    border: 2px solid #88c0d0;
+}
+
+/* Dracula Theme */
+.theme-dracula {
+    --theme-bg: #282a36;
+    --theme-text: #f8f8f2;
+    --theme-primary: #6272a4;
+    --theme-secondary: #50fa7b;
+    --theme-accent: #ff79c6;
+}
+
+body.theme-dracula {
+    background: linear-gradient(135deg, #282a36 0%, #3d3f4d 50%, #282a36 100%);
+}
+
+body.theme-dracula .calculator {
+    background: rgba(40, 42, 54, 0.95);
+    color: #f8f8f2;
+}
+
+body.theme-dracula .num-btn {
+    background: linear-gradient(135deg, #3d3f4d 0%, #282a36 100%);
+    color: #f8f8f2;
+}
+
+body.theme-dracula .num-btn:hover {
+    background: linear-gradient(135deg, #4d4f5d 0%, #3d3f4d 100%);
+}
+
+body.theme-dracula .operator-btn {
+    background: linear-gradient(135deg, #ff79c6 0%, #bd93f9 100%);
+    color: #f8f8f2;
+}
+
+body.theme-dracula .display-container {
+    background: linear-gradient(135deg, #1a1c28 0%, #282a36 100%);
+    border: 2px solid #ff79c6;
+}
+
+/* Accessibility Improvements */
+
+/* High Contrast Mode */
+@media (prefers-contrast: more) {
+    .btn {
+        border: 2px solid currentColor;
+    }
+
+    .display-container {
+        border: 3px solid white;
+    }
+
+    .main-display {
+        font-weight: 900;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus Visible Enhancements */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 3px solid #667eea;
+    outline-offset: 2px;
+}
+
+/* Mobile Optimization */
+@supports (padding: max(0px)) {
+    .calculator {
+        padding: max(30px, env(safe-area-inset-top)) max(30px, env(safe-area-inset-right)) max(30px, env(safe-area-inset-bottom)) max(30px, env(safe-area-inset-left));
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    .calculator {
+        background: white;
+        box-shadow: none;
+    }
+
+    .theme-toggle,
+    .history-toggle {
+        display: none;
+    }
+}
