@@ -6,6 +6,12 @@ A modern web-based engineering calculator with comprehensive scientific function
 [![GitHub stars](https://img.shields.io/github/stars/devanjaniraj/engicalc-pro)](https://github.com/devanjaniraj/engicalc-pro/stargazers)
 [![GitHub last commit](https://img.shields.io/github/last-commit/devanjaniraj/engicalc-pro)](https://github.com/devanjaniraj/engicalc-pro/commits/main)
 
+## 🚀 Live Demo
+
+**Try it now:** [https://devanjaniraj.github.io/engicalc-pro/](https://devanjaniraj.github.io/engicalc-pro/)
+
+Use the calculator directly in your browser - no installation required!
+
 ## Features
 
 ### Calculator Modes
